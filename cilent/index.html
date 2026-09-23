@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>TaskFlow</h1>
+      <p class="tagline">Projects and tasks, kept in sync with the server.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel projects-panel">
+        <div class="panel-heading">
+          <h2>Projects</h2>
+        </div>
+
+        <form id="new-project-form" class="inline-form">
+          <input type="text" id="project-name" placeholder="New project name" required>
+          <input type="text" id="project-description" placeholder="Description (optional)">
+          <button type="submit">Add project</button>
+        </form>
+        <p id="project-form-error" class="error-text" hidden></p>
+
+        <ul id="project-list" class="item-list"></ul>
+      </section>
+
+      <section class="panel tasks-panel">
+        <div class="panel-heading">
+          <h2 id="tasks-title">Select a project</h2>
+        </div>
+
+        <form id="new-task-form" class="inline-form" hidden>
+          <input type="text" id="task-title" placeholder="New task title" required>
+          <input type="text" id="task-description" placeholder="Description (optional)">
+          <button type="submit">Add task</button>
+        </form>
+        <p id="task-form-error" class="error-text" hidden></p>
+
+        <ul id="task-list" class="item-list"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span id="status-line">Connecting to API…</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
